@@ -1,0 +1,15 @@
+namespace CodeFirstDemo.Api.Entities
+{
+    public abstract class BaseEntity
+    {
+        public BaseEntity()
+        {
+            CreatedDate = DateTime.Now;
+        }
+
+        public int Id { get; set; }
+        public DateTime CreatedDate { get; set; }
+        public DateTime? UpdatedDate { get; set; } // Güncellenmemişse NULL olabilir.
+        public bool IsDeleted { get; set; } = false; // Varsayılan olarak silinmemiş.
+    }
+}
